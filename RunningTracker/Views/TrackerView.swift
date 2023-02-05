@@ -53,13 +53,65 @@ struct TrackerView: View {
             }
             
             
-            HStack {
-                Text("Your run:")
-                    .font(.title3.smallCaps())
-                    .bold()
-                Spacer()
+            VStack(spacing: 15) {
+                HStack {
+                    Text("Your run:")
+                        .font(.title3.smallCaps())
+                        .bold()
+                    Spacer()
+                }
+                .padding(.horizontal)
+                
+                HStack(spacing: 5) {
+                    Image(systemName: "flame.fill")
+                        .font(.system(size:20))
+                    Text("Calories Burned:")
+                        .font(.body.smallCaps())
+                    Text("0 kcal")
+                    Spacer()
+                }
+                .padding(.horizontal)
+                
+                HStack(spacing: 5) {
+                    Image(systemName: "figure.run")
+                        .font(.system(size:20))
+                    Text("Running Pace:")
+                        .font(.body.smallCaps())
+                    Text("0 min/km")
+                    Spacer()
+                }
+                .padding(.horizontal)
+                
+                HStack(spacing: 5) {
+                    Image(systemName: "speedometer")
+                        .font(.system(size:20))
+                    Text("Average Speed:")
+                        .font(.body.smallCaps())
+                    Text("0 km/h")
+                    Spacer()
+                }
+                .padding(.horizontal)
+                
+                HStack(spacing: 5) {
+                    Image(systemName: "clock")
+                        .font(.system(size:20))
+                    Text("Time:")
+                        .font(.body.smallCaps())
+                    Text("0 min")
+                    Spacer()
+                }
+                .padding(.horizontal)
+                
+                HStack(spacing: 5) {
+                    Image(systemName: "space")
+                        .font(.system(size:20))
+                    Text("Distance:")
+                        .font(.body.smallCaps())
+                    Text("0 km")
+                    Spacer()
+                }
+                .padding(.horizontal)
             }
-            .padding(.horizontal)
             
             Spacer()
         }
