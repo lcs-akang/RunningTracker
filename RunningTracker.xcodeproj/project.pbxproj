@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		A782073D298F3852009BCEE9 /* RunningTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782073C298F3852009BCEE9 /* RunningTrackerApp.swift */; };
-		A782073F298F3852009BCEE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782073E298F3852009BCEE9 /* ContentView.swift */; };
 		A7820741298F3859009BCEE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7820740298F3859009BCEE9 /* Assets.xcassets */; };
 		A7820744298F3859009BCEE9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7820743298F3859009BCEE9 /* Preview Assets.xcassets */; };
+		A782074D298F43A7009BCEE9 /* TrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782074C298F43A7009BCEE9 /* TrackerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A7820739298F3852009BCEE9 /* RunningTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A782073C298F3852009BCEE9 /* RunningTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningTrackerApp.swift; sourceTree = "<group>"; };
-		A782073E298F3852009BCEE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A7820740298F3859009BCEE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7820743298F3859009BCEE9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A782074C298F43A7009BCEE9 /* TrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,8 @@
 			isa = PBXGroup;
 			children = (
 				A782073C298F3852009BCEE9 /* RunningTrackerApp.swift */,
-				A782073E298F3852009BCEE9 /* ContentView.swift */,
+				A782074A298F3865009BCEE9 /* Model */,
+				A782074B298F386D009BCEE9 /* Views */,
 				A7820740298F3859009BCEE9 /* Assets.xcassets */,
 				A7820742298F3859009BCEE9 /* Preview Content */,
 			);
@@ -65,6 +66,21 @@
 				A7820743298F3859009BCEE9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A782074A298F3865009BCEE9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A782074B298F386D009BCEE9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A782074C298F43A7009BCEE9 /* TrackerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A782073F298F3852009BCEE9 /* ContentView.swift in Sources */,
 				A782073D298F3852009BCEE9 /* RunningTrackerApp.swift in Sources */,
+				A782074D298F43A7009BCEE9 /* TrackerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
