@@ -8,6 +8,21 @@
 import SwiftUI
 
 struct TrackerView: View {
+    
+    // MARK: Stored properties
+    
+    @State var providedBodyWeight = ""
+    
+    // MARK: Computed properties
+    
+    var bodyWeight: Double? {
+        
+        guard let amountAsDouble = Double(providedBodyWeight) else {
+            return nil
+        }
+        return amountAsDouble
+    }
+    
     var body: some View {
         VStack(spacing: 30) {
             
@@ -33,7 +48,7 @@ struct TrackerView: View {
                 HStack {
                     Text("Body Weight (kg):")
                         .font(.body.smallCaps())
-                    TextField("00.0", text: .constant(""))
+                    TextField("00.0", text: $providedBodyWeight)
                 }
                 .padding(.horizontal)
                 
