@@ -11,7 +11,9 @@ import SwiftUI
 struct RunningTrackerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                TrackerView()
+            }
         }
     }
 }

@@ -9,12 +9,17 @@ import SwiftUI
 
 struct TrackerView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Tracker goes here soon")
+        }
+        .navigationTitle("Running Tracker")
     }
 }
 
 struct TrackerView_Previews: PreviewProvider {
     static var previews: some View {
-        TrackerView()
+        NavigationView {
+            TrackerView()
+        }
     }
 }
