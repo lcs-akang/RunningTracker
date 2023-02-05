@@ -12,12 +12,21 @@ struct TrackerView: View {
     // MARK: Stored properties
     
     @State var providedBodyWeight = ""
+    @State var providedDistance = ""
     
     // MARK: Computed properties
     
     var bodyWeight: Double? {
         
         guard let amountAsDouble = Double(providedBodyWeight) else {
+            return nil
+        }
+        return amountAsDouble
+    }
+    
+    var distance: Double? {
+        
+        guard let amountAsDouble = Double(providedDistance) else {
             return nil
         }
         return amountAsDouble
@@ -55,7 +64,7 @@ struct TrackerView: View {
                 HStack {
                     Text("Distance (km):")
                         .font(.body.smallCaps())
-                    TextField("00.0", text: .constant(""))
+                    TextField("00.0", text: $providedDistance)
                 }
                 .padding(.horizontal)
                 
