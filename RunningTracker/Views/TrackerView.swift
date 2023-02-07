@@ -34,6 +34,14 @@ struct TrackerView: View {
         return amountAsDouble
     }
     
+    var distanceFormatted: String {
+        guard let distance = distance else {
+            return "Unknown..."
+        }
+        
+        return distance.formatted(.number.precision(.fractionLength(0)))
+        
+    }
     
     var time: Double? {
         
@@ -43,6 +51,14 @@ struct TrackerView: View {
         return amountAsDouble
     }
     
+    var timeFormatted: String {
+        guard let time = time else {
+            return "Unknown..."
+        }
+        
+        return time.formatted(.number.precision(.fractionLength(0)))
+        
+    }
     
     var averageSpeed: Double? {
         
@@ -64,7 +80,7 @@ struct TrackerView: View {
     
     var averageSpeedFormatted: String {
         guard let speed = averageSpeed else {
-            return "Cannot be determined..."
+            return "Unknown..."
         }
         
         return speed.formatted(.number.precision(.fractionLength(1)))
@@ -94,13 +110,38 @@ struct TrackerView: View {
     
     var caloriesBurnedFormatted: String {
         guard let calories = caloriesBurned else {
-            return "Cannot be determined..."
+            return "Unknown..."
         }
         
         return calories.formatted(.number.precision(.fractionLength(0)))
         
     }
     
+    
+    var runningPace: Double? {
+        
+        guard let timeAsDouble = time else {
+            return nil
+        }
+        
+        guard let distanceAsDouble = distance else {
+            return nil
+        }
+        
+        let runningPace = timeAsDouble / distanceAsDouble
+        
+        return runningPace
+        
+    }
+    
+    var runningPaceFormatted: String {
+        guard let pace = runningPace else {
+            return "Unknown..."
+        }
+        
+        return pace.formatted(.number.precision(.fractionLength(1)))
+        
+    }
     var body: some View {
         VStack(spacing: 30) {
             
@@ -172,7 +213,7 @@ struct TrackerView: View {
                         .font(.system(size: 20))
                     Text("Running Pace:")
                         .font(.body.smallCaps())
-                    Text("0 min/km")
+                    Text("\(runningPaceFormatted) min/km")
                     Spacer()
                 }
                 .padding(.horizontal)
@@ -192,7 +233,7 @@ struct TrackerView: View {
                         .font(.system(size: 20))
                     Text("Time:")
                         .font(.body.smallCaps())
-                    Text("0 min")
+                    Text("\(timeFormatted) min")
                     Spacer()
                 }
                 .padding(.horizontal)
@@ -202,7 +243,7 @@ struct TrackerView: View {
                         .font(.system(size: 20))
                     Text("Distance:")
                         .font(.body.smallCaps())
-                    Text("0 km")
+                    Text("\(distanceFormatted) km")
                     Spacer()
                 }
                 .padding(.horizontal)
