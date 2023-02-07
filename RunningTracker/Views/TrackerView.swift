@@ -62,6 +62,16 @@ struct TrackerView: View {
         
     }
     
+    var averageSpeedFormatted: String {
+        guard let speed = averageSpeed else {
+            return "Cannot be determined..."
+        }
+        
+        return speed.formatted(.number.precision(.fractionLength(1)))
+        
+    }
+    
+    
     
     var caloriesBurned: Double? {
         
@@ -80,6 +90,15 @@ struct TrackerView: View {
         let caloriesBurned = ( timeAsDouble * (speedAsDouble * 3.5 * weightAsDouble) ) / 200
         
         return caloriesBurned
+    }
+    
+    var caloriesBurnedFormatted: String {
+        guard let calories = caloriesBurned else {
+            return "Cannot be determined..."
+        }
+        
+        return calories.formatted(.number.precision(.fractionLength(0)))
+        
     }
     
     var body: some View {
@@ -140,17 +159,17 @@ struct TrackerView: View {
                 
                 HStack(spacing: 5) {
                     Image(systemName: "flame.fill")
-                        .font(.system(size:20))
+                        .font(.system(size: 20))
                     Text("Calories Burned:")
                         .font(.body.smallCaps())
-                    Text("0 kcal")
+                    Text("\(caloriesBurnedFormatted) kcal")
                     Spacer()
                 }
                 .padding(.horizontal)
                 
                 HStack(spacing: 5) {
                     Image(systemName: "figure.run")
-                        .font(.system(size:20))
+                        .font(.system(size: 20))
                     Text("Running Pace:")
                         .font(.body.smallCaps())
                     Text("0 min/km")
@@ -160,17 +179,17 @@ struct TrackerView: View {
                 
                 HStack(spacing: 5) {
                     Image(systemName: "speedometer")
-                        .font(.system(size:20))
+                        .font(.system(size: 20))
                     Text("Average Speed:")
                         .font(.body.smallCaps())
-                    Text("0 km/h")
+                    Text("\(averageSpeedFormatted) km/h")
                     Spacer()
                 }
                 .padding(.horizontal)
                 
                 HStack(spacing: 5) {
                     Image(systemName: "clock")
-                        .font(.system(size:20))
+                        .font(.system(size: 20))
                     Text("Time:")
                         .font(.body.smallCaps())
                     Text("0 min")
@@ -180,7 +199,7 @@ struct TrackerView: View {
                 
                 HStack(spacing: 5) {
                     Image(systemName: "space")
-                        .font(.system(size:20))
+                        .font(.system(size: 20))
                     Text("Distance:")
                         .font(.body.smallCaps())
                     Text("0 km")
