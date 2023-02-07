@@ -43,7 +43,45 @@ struct TrackerView: View {
         return amountAsDouble
     }
     
-
+    
+    var averageSpeed: Double? {
+        
+        guard let distanceAsDouble = distance else {
+            return nil
+        }
+        
+        guard let timeAsDouble = time else {
+            return nil
+        }
+        
+        let timeInHours = timeAsDouble / 60
+        
+        let averageSpeed = distanceAsDouble / timeInHours
+        
+        return averageSpeed
+        
+    }
+    
+    
+    var caloriesBurned: Double? {
+        
+        guard let weightAsDouble = bodyWeight else {
+            return nil
+        }
+        
+        guard let timeAsDouble = time else {
+            return nil
+        }
+        
+        guard let speedAsDouble = averageSpeed else {
+            return nil
+        }
+        
+        let caloriesBurned = ( timeAsDouble * (speedAsDouble * 3.5 * weightAsDouble) ) / 200
+        
+        return caloriesBurned
+    }
+    
     var body: some View {
         VStack(spacing: 30) {
             
