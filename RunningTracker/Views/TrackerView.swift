@@ -25,6 +25,7 @@ struct TrackerView: View {
         return amountAsDouble
     }
     
+    
     var distance: Double? {
         
         guard let amountAsDouble = Double(providedDistance) else {
@@ -32,6 +33,7 @@ struct TrackerView: View {
         }
         return amountAsDouble
     }
+    
     
     var time: Double? {
         
@@ -41,6 +43,7 @@ struct TrackerView: View {
         return amountAsDouble
     }
     
+
     var body: some View {
         VStack(spacing: 30) {
             
@@ -55,36 +58,38 @@ struct TrackerView: View {
                 }
                 .padding()
                 
-                HStack {
-                    Text("Enter the statistics of your run:")
-                        .font(.title3.smallCaps())
-                        .bold()
-                    Spacer()
-                }
-                .padding(.horizontal)
                 
-                HStack {
-                    Text("Body Weight (kg):")
-                        .font(.body.smallCaps())
-                    TextField("00.0", text: $providedBodyWeight)
+                Group {
+                    HStack {
+                        Text("Enter the statistics of your run:")
+                            .font(.title3.smallCaps())
+                            .bold()
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                    
+                    HStack {
+                        Text("Body Weight (kg):")
+                            .font(.body.smallCaps())
+                        TextField("00.0", text: $providedBodyWeight)
+                    }
+                    .padding(.horizontal)
+                    
+                    HStack {
+                        Text("Distance (km):")
+                            .font(.body.smallCaps())
+                        TextField("00.0", text: $providedDistance)
+                    }
+                    .padding(.horizontal)
+                    
+                    HStack {
+                        Text("Time (min):")
+                            .font(.body.smallCaps())
+                        TextField("00.0", text: $providedTime)
+                    }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
-                
-                HStack {
-                    Text("Distance (km):")
-                        .font(.body.smallCaps())
-                    TextField("00.0", text: $providedDistance)
-                }
-                .padding(.horizontal)
-                
-                HStack {
-                    Text("Time (min):")
-                        .font(.body.smallCaps())
-                    TextField("00.0", text: $providedTime)
-                }
-                .padding(.horizontal)
             }
-            
             
             VStack(spacing: 15) {
                 HStack {
@@ -145,6 +150,13 @@ struct TrackerView: View {
                 }
                 .padding(.horizontal)
             }
+            
+            Button(action: {
+                
+            }, label: {
+                Text("Save Run")
+            })
+            .buttonStyle(.bordered)
             
             Spacer()
         }
