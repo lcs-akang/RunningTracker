@@ -11,11 +11,11 @@ struct TrackerView: View {
     
     // MARK: Stored properties
     
-    @State var providedBodyWeight = ""
-    @State var providedDistance = ""
-    @State var providedTime = ""
+    @State var providedBodyWeight = "60"
+    @State var providedDistance = "5"
+    @State var providedTime = "30"
     
-    @State var history: [Result] = [resultForPreview]
+    @State var history: [Result] = []
     
     // MARK: Computed properties
     
@@ -253,12 +253,18 @@ struct TrackerView: View {
             
             Button(action: {
                 
+                let priorResult = Result(caloriesBurned: caloriesBurnedFormatted,
+                                         runningPace: runningPaceFormatted,
+                                         averageSpeed: averageSpeedFormatted,
+                                         time: timeFormatted,
+                                         distance: distanceFormatted)
+                
+                history.append(priorResult)
+                
             }, label: {
                 Text("Save Run")
             })
             .buttonStyle(.bordered)
-            
-            Spacer()
             
             Group {
 
@@ -271,6 +277,10 @@ struct TrackerView: View {
                             }
 
                         }
+            
+            Spacer()
+            
+            
         }
         .navigationTitle("Running Tracker")
     }
