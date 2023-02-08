@@ -15,6 +15,8 @@ struct TrackerView: View {
     @State var providedDistance = ""
     @State var providedTime = ""
     
+    @State var history: [Result] = [resultForPreview]
+    
     // MARK: Computed properties
     
     var bodyWeight: Double? {
@@ -257,6 +259,18 @@ struct TrackerView: View {
             .buttonStyle(.bordered)
             
             Spacer()
+            
+            Group {
+
+                Text("History")
+                    .font(.headline.smallCaps())
+                    .padding()
+
+                List(history.reversed()) { somePriorResult in
+                    ResultView(priorResult: somePriorResult)
+                            }
+
+                        }
         }
         .navigationTitle("Running Tracker")
     }
