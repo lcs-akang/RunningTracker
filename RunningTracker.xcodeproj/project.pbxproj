@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A748B1F12994067B00023564 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A748B1F02994067B00023564 /* Result.swift */; };
+		A748B1F3299407A700023564 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A748B1F2299407A700023564 /* ResultView.swift */; };
 		A782073D298F3852009BCEE9 /* RunningTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782073C298F3852009BCEE9 /* RunningTrackerApp.swift */; };
 		A7820741298F3859009BCEE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7820740298F3859009BCEE9 /* Assets.xcassets */; };
 		A7820744298F3859009BCEE9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7820743298F3859009BCEE9 /* Preview Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A748B1F02994067B00023564 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		A748B1F2299407A700023564 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		A7820739298F3852009BCEE9 /* RunningTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A782073C298F3852009BCEE9 /* RunningTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningTrackerApp.swift; sourceTree = "<group>"; };
 		A7820740298F3859009BCEE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +75,7 @@
 		A782074A298F3865009BCEE9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A748B1F02994067B00023564 /* Result.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -79,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				A782074C298F43A7009BCEE9 /* TrackerView.swift */,
+				A748B1F2299407A700023564 /* ResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A748B1F12994067B00023564 /* Result.swift in Sources */,
+				A748B1F3299407A700023564 /* ResultView.swift in Sources */,
 				A782073D298F3852009BCEE9 /* RunningTrackerApp.swift in Sources */,
 				A782074D298F43A7009BCEE9 /* TrackerView.swift in Sources */,
 			);
