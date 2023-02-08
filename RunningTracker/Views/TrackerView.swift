@@ -39,7 +39,7 @@ struct TrackerView: View {
             return "Unknown..."
         }
         
-        return distance.formatted(.number.precision(.fractionLength(0)))
+        return distance.formatted(.number.precision(.fractionLength(1)))
         
     }
     
