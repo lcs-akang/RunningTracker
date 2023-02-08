@@ -15,7 +15,7 @@ struct TrackerView: View {
     @State var providedDistance = "5"
     @State var providedTime = "30"
     
-    @State var history: [Result] = []
+    @Binding var history: [Result]
     
     // MARK: Computed properties
     
@@ -266,17 +266,7 @@ struct TrackerView: View {
             })
             .buttonStyle(.bordered)
             
-            Group {
-
-                Text("History")
-                    .font(.headline.smallCaps())
-                    .padding()
-
-                List(history.reversed()) { somePriorResult in
-                    ResultView(priorResult: somePriorResult)
-                            }
-
-                        }
+            
             
             Spacer()
             
@@ -289,7 +279,7 @@ struct TrackerView: View {
 struct TrackerView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            TrackerView()
+//            TrackerView(history: $history)
         }
     }
 }
