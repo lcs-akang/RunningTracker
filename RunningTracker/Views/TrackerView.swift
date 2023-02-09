@@ -209,55 +209,15 @@ struct TrackerView: View {
                 }
                 .padding(.horizontal)
                 
-                HStack(spacing: 5) {
-                    Image(systemName: "flame.fill")
-                        .font(.system(size: 20))
-                    Text("Calories Burned:")
-                        .font(.body.smallCaps())
-                    Text("\(caloriesBurnedFormatted) kcal")
-                    Spacer()
-                }
-                .padding(.horizontal)
+                RunElementView(icon: "flame.fill", title: "Calories Burned:", value: "\(caloriesBurnedFormatted) kcal")
                 
-                HStack(spacing: 5) {
-                    Image(systemName: "figure.run")
-                        .font(.system(size: 20))
-                    Text("Running Pace:")
-                        .font(.body.smallCaps())
-                    Text("\(runningPaceFormatted) min/km")
-                    Spacer()
-                }
-                .padding(.horizontal)
+                RunElementView(icon: "figure.run", title: "Running Pace:", value: "\(runningPaceFormatted) min/km")
                 
-                HStack(spacing: 5) {
-                    Image(systemName: "speedometer")
-                        .font(.system(size: 20))
-                    Text("Average Speed:")
-                        .font(.body.smallCaps())
-                    Text("\(averageSpeedFormatted) km/h")
-                    Spacer()
-                }
-                .padding(.horizontal)
+                RunElementView(icon: "speedometer", title: "Average Speed:", value: "\(averageSpeedFormatted) km/h")
                 
-                HStack(spacing: 5) {
-                    Image(systemName: "clock")
-                        .font(.system(size: 20))
-                    Text("Time:")
-                        .font(.body.smallCaps())
-                    Text("\(timeFormatted) min")
-                    Spacer()
-                }
-                .padding(.horizontal)
+                RunElementView(icon: "clock", title: "Time:", value: "\(timeFormatted) min")
                 
-                HStack(spacing: 5) {
-                    Image(systemName: "space")
-                        .font(.system(size: 20))
-                    Text("Distance:")
-                        .font(.body.smallCaps())
-                    Text("\(distanceFormatted) km")
-                    Spacer()
-                }
-                .padding(.horizontal)
+                RunElementView(icon: "space", title: "Distance:", value: "\(distanceFormatted) km")
             }
             
             Button(action: {
