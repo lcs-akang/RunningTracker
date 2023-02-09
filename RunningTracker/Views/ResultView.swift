@@ -16,76 +16,65 @@ struct ResultView: View {
     
     var body: some View {
         
-        HStack {
-            VStack(spacing: 3) {
-                
-                HStack(spacing: 5) {
-                    Image(systemName: "clock")
-                        .font(.system(size: 20))
-                    Text("Time")
-                        .font(.body.smallCaps())
-                    Spacer()
+            HStack() {
+                VStack(spacing: 3) {
+                    
+                    HStack(spacing: 5) {
+                        Image(systemName: "clock")
+                        Text("Time")
+
+                        Spacer()
+                    }
+                    
+                    
+                    HStack(spacing: 5) {
+                        Image(systemName: "space")
+                        Text("Distance")
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Text("============")
+                        Spacer()
+                    }
+                    
+                    HStack(spacing: 5) {
+                        Image(systemName: "flame.fill")
+                        Text("Calories Burned")
+                        Spacer()
+                    }
+                    
+                    
+                    HStack(spacing: 5) {
+                        Image(systemName: "figure.run")
+                        Text("Running Pace")
+                        Spacer()
+                    }
+                    
+                    
+                    HStack(spacing: 5) {
+                        Image(systemName: "speedometer")
+                        Text("Average Speed")
+                        Spacer()
+                    }
+                    
                 }
+                .font(.system(size: 15))
+                .padding(.horizontal)
                 
-                
-                HStack(spacing: 5) {
-                    Image(systemName: "space")
-                        .font(.system(size: 20))
-                    Text("Distance")
-                        .font(.body.smallCaps())
-                    Spacer()
+                VStack(spacing: 3) {
+                    Text("\(priorResult.time) min")
+                    Text("\(priorResult.distance) km")
+                    
+                    Text("========")
+                    
+                    Text("\(priorResult.caloriesBurned) kcal")
+                    Text("\(priorResult.runningPace) min/km")
+                    Text("\(priorResult.averageSpeed) km/h")
                 }
-                
-                HStack {
-                    Text("============")
-                    Spacer()
-                }
-                
-                HStack(spacing: 5) {
-                    Image(systemName: "flame.fill")
-                        .font(.system(size: 20))
-                    Text("Calories Burned")
-                        .font(.body.smallCaps())
-                    Spacer()
-                }
-                
-                
-                HStack(spacing: 5) {
-                    Image(systemName: "figure.run")
-                        .font(.system(size: 20))
-                    Text("Running Pace")
-                        .font(.body.smallCaps())
-                    Spacer()
-                }
-                
-                
-                HStack(spacing: 5) {
-                    Image(systemName: "speedometer")
-                        .font(.system(size: 20))
-                    Text("Average Speed")
-                        .font(.body.smallCaps())
-                    Spacer()
-                }
-                
-                
-            }
-            .padding(.horizontal)
-            
-            Spacer()
-            
-            VStack(spacing: 3) {
-                Text("\(priorResult.time) min")
-                Text("\(priorResult.distance) km")
-                
-                Text("========")
-                
-                Text("\(priorResult.caloriesBurned) kcal")
-                Text("\(priorResult.runningPace) min/km")
-                Text("\(priorResult.averageSpeed) km/h")
-            }
-            .padding(.horizontal)
+                .font(.system(size: 15))
+                .padding(.horizontal)
         }
-        
     }
 }
 
