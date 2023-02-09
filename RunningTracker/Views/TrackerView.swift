@@ -38,7 +38,7 @@ struct TrackerView: View {
     
     var distanceFormatted: String {
         guard let distance = distance else {
-            return "Unknown..."
+            return "???"
         }
         
         return distance.formatted(.number.precision(.fractionLength(1)))
@@ -55,7 +55,7 @@ struct TrackerView: View {
     
     var timeFormatted: String {
         guard let time = time else {
-            return "Unknown..."
+            return "???"
         }
         
         return time.formatted(.number.precision(.fractionLength(0)))
@@ -82,7 +82,7 @@ struct TrackerView: View {
     
     var averageSpeedFormatted: String {
         guard let speed = averageSpeed else {
-            return "Unknown..."
+            return "???"
         }
         
         return speed.formatted(.number.precision(.fractionLength(1)))
@@ -112,7 +112,7 @@ struct TrackerView: View {
     
     var caloriesBurnedFormatted: String {
         guard let calories = caloriesBurned else {
-            return "Unknown..."
+            return "???"
         }
         
         return calories.formatted(.number.precision(.fractionLength(0)))
@@ -138,7 +138,7 @@ struct TrackerView: View {
     
     var runningPaceFormatted: String {
         guard let pace = runningPace else {
-            return "Unknown..."
+            return "???"
         }
         
         return pace.formatted(.number.precision(.fractionLength(1)))
@@ -148,6 +148,15 @@ struct TrackerView: View {
         VStack(spacing: 30) {
             
             VStack(spacing: 15) {
+                
+                HStack {
+                    Text("Running Tracker")
+                        .font(.largeTitle)
+                        .bold()
+                    Spacer()
+                }
+                .padding(.horizontal)
+                
                 HStack(spacing: 30) {
                     Image(systemName: "figure.run")
                         .font(.system(size: 80))
@@ -279,7 +288,7 @@ struct TrackerView: View {
 struct TrackerView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-//            TrackerView(history: $history)
+//            TrackerView(history: history)
         }
     }
 }
