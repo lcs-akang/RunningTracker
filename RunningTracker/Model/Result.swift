@@ -22,3 +22,6 @@ var resultForPreview = Result(caloriesBurned: "315",
                               averageSpeed: "10.0",
                               time: "30",
                               distance: "5.0")
+
+
+var historyForPreviews = [resultForPreview]

@@ -11,9 +11,9 @@ struct TrackerView: View {
     
     // MARK: Stored properties
     
-    @State var providedBodyWeight = "60"
-    @State var providedDistance = "5"
-    @State var providedTime = "30"
+    @State var providedBodyWeight = ""
+    @State var providedDistance = ""
+    @State var providedTime = ""
     
     @Binding var history: [Result]
     
@@ -89,8 +89,6 @@ struct TrackerView: View {
         
     }
     
-    
-    
     var caloriesBurned: Double? {
         
         guard let weightAsDouble = bodyWeight else {
@@ -144,6 +142,8 @@ struct TrackerView: View {
         return pace.formatted(.number.precision(.fractionLength(1)))
         
     }
+    
+    
     var body: some View {
         VStack(spacing: 30) {
             
@@ -281,14 +281,13 @@ struct TrackerView: View {
             
             
         }
-        .navigationTitle("Running Tracker")
     }
 }
 
 struct TrackerView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-//            TrackerView(history: history)
+            TrackerView(history: Binding.constant(historyForPreviews))
         }
     }
 }

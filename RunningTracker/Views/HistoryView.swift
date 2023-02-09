@@ -28,8 +28,8 @@ struct HistoryView: View {
     }
 }
 
-//struct HistoryView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HistoryView()
-//    }
-//}
+struct HistoryView_Previews: PreviewProvider {
+    static var previews: some View {
+        HistoryView(history: Binding.constant(historyForPreviews))
+    }
+}
